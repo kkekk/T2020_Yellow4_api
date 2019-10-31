@@ -99,6 +99,12 @@ def summarize2(ids):
             debit_tag_sum[j['tag']] += float(j['amount'])
 
 
+    for k in debit_tag_sum:
+        debit_tag_sum[k] = '%.2f' % debit_tag_sum[k]
+
+    for k in credit_tag_sum:
+        credit_tag_sum[k] = '%.2f' % credit_tag_sum[k]
+
     return{
         'debit': {
             'debit_tag_count': debit_tag_count,
